@@ -1,4 +1,4 @@
-# Hysplit
+# ERA52ARL Hysplit
 
   How to compile era52arl on gadi, which converts native ECMWF ERA5 file format (grib) to the format required for hysplit input (arl).
   This script requires (see era52arl MAIN PROGRAM DOCUMENTATION BLOCK - line 22-23):
@@ -7,10 +7,8 @@
 
 ### Locations
 
-  I have a copy of hysplit.v5.2.3 in my directory in q90 (copied from Rob Ryan). <br/>
-  - Hysplit: `/g/data/q90/ac9768/hysplit.v5.2.3`
-  - To compile era52arl program: `/g/data/q90/ac9768/hysplit.v5.2.3/data2arl/era52arl`
-  - Compiled era52arl program: `/g/data/q90/ac9768/hysplit.v5.2.3/exec`
+  - File locations to compile era52arl program: `hysplit.v5.2.3/data2arl/era52arl`
+  - Compiled era52arl program: `hysplit.v5.2.3/exec`
   
 ### Step 1: Modifying the Makefiles to compile era52arl.f
 
@@ -49,5 +47,6 @@
   ### Step 3: Running era52arl
 
     ./era52arl -i<path_to_3d_era5_grib_file> -a<path_to_2d_era5_grib_file> -v
+    *Note: remove <>, also make sure no space is between -i, -a and the file paths - otherwise era52arl cannot see the grib files*
     
     
